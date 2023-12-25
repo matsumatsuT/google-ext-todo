@@ -1,7 +1,6 @@
-// TODO また調整する
 {
   "manifest_version": 3,
-  "name": "テスト",
+  "name": "viteテスト",
   "version": "1.0",
   "description": "説明を書く",
   "icons": {
