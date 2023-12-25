@@ -1,0 +1,20 @@
+// TODO また調整する
+{
+  "manifest_version": 3,
+  "name": "テスト",
+  "version": "1.0",
+  "description": "説明を書く",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png"
+  },
+  "permissions": ["tabs"],
+  "action": {
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    },
+    "default_title": "default_title",
+    "default_popup": "src/popup/popup.html"
+  }
+}
