@@ -9,3 +9,8 @@ React + TypeScript + Vite
 ```
 npm run build
 ```
+
+# タスク
+- [ ] lint
+- [ ] husky
+- [ ] prettier
