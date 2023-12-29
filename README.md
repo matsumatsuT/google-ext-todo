@@ -2,6 +2,8 @@
 
 React + TypeScript + Vite
 
+emotion
+
 # usage
 
 **build**
