@@ -18,6 +18,9 @@ export default defineConfig({
       },
     },
   },
+  resolve: {
+    alias: [{ find: "@", replacement: "/src" }],
+  },
   //  WebSocket connection to 'ws://localhost/' failed:  というエラーの対策
   // https://github.com/crxjs/chrome-extension-tools/issues/746#issuecomment-1647484887
   server: {
