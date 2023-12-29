@@ -8,7 +8,4 @@ export const Popup = () => {
   );
 };
 
-const wrapperStyle = css({
-  width: "1000px",
-  color: "red",
-});
+const wrapperStyle = css({});
