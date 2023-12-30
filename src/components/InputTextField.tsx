@@ -1,24 +1,25 @@
 import { TextField, TextFieldProps } from "@mui/material";
-import { Controller, useFormContext } from "react-hook-form";
+import { Control, Controller, FieldValues, Path } from "react-hook-form";
 
-type Props = {
-  name: string;
+type Props<T extends FieldValues> = {
+  name: Path<T>;
+  control: Control<T>;
 } & TextFieldProps;
-export const InputTextField = ({ name, ...rest }: Props) => {
-  const { control } = useFormContext();
-
-  return (
-    <Controller
-      name={name}
-      control={control}
-      render={({ field, fieldState }) => (
-        <TextField
-          {...field}
-          error={fieldState.invalid}
-          helperText={fieldState.error?.message}
-          {...rest}
-        />
-      )}
-    />
-  );
-};
+export const InputTextField = <T extends FieldValues>({
+  name,
+  control,
+  ...rest
+}: Props<T>) => (
+  <Controller
+    name={name}
+    control={control}
+    render={({ field, fieldState }) => (
+      <TextField
+        {...field}
+        error={fieldState.invalid}
+        helperText={fieldState.error?.message}
+        {...rest}
+      />
+    )}
+  />
+);
