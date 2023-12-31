@@ -1,31 +1,23 @@
 import { css } from "@emotion/react";
-import { FormProvider, useForm } from "react-hook-form";
-import { InputTextField } from "@/components/InputTextField";
-
-type FormProps = {
-  text: string;
-  test: string;
-};
+import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
+import { PopupForm, PopupFormValues } from "./PopupForm";
 
 export const Popup = () => {
-  const formMethods = useForm<FormProps>({
+  const formMethods = useForm<PopupFormValues>({
     defaultValues: {
       text: "",
-      test: "",
     },
   });
 
-  const text = formMethods.watch("text");
-  const test = formMethods.watch("test");
+  const onSubmit: SubmitHandler<PopupFormValues> = (value) => {
+    console.log({ ...value });
+  };
 
   return (
     <div css={wrapperStyle}>
-      <h1>Popup Page</h1>
+      <h1>TODO入力</h1>
       <FormProvider {...formMethods}>
-        <InputTextField name="text" control={formMethods.control} />
-        <InputTextField name="test" control={formMethods.control} />
-        <div>{text}</div>
-        <div>{test}</div>
+        <PopupForm onSubmit={onSubmit} />
       </FormProvider>
     </div>
   );
