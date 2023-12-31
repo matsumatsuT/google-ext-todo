@@ -11,6 +11,7 @@ export const Popup = () => {
 
   const onSubmit: SubmitHandler<PopupFormValues> = (value) => {
     console.log({ ...value });
+    formMethods.setValue("text", "");
   };
 
   return (

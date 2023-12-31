@@ -13,13 +13,6 @@ export const InputTextField = <T extends FieldValues>({
   <Controller
     name={name}
     control={control}
-    render={({ field, fieldState }) => (
-      <TextField
-        {...field}
-        error={fieldState.invalid}
-        helperText={fieldState.error?.message}
-        {...rest}
-      />
-    )}
+    render={({ field }) => <TextField {...field} {...rest} />}
   />
 );
